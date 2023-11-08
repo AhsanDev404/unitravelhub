@@ -2,8 +2,8 @@
 import React, { useState } from 'react';
 
 const initialAds = [
-  { id: 1, name: 'User 1', description: 'Description for User 1', status: 'Active' },
-  { id: 2, name: 'User', description: 'Description for User 2', status: 'Inactive' },
+  { id: 1, name: 'Agent 1', description: 'Description for Agent 1', status: 'Active' },
+  { id: 2, name: 'Agent2', description: 'Description for Agent 2', status: 'Inactive' },
   // ...more initial ads
 ];
 
@@ -70,7 +70,7 @@ const AgentManagementPage = () => {
           </tbody>
         </table>
         <button onClick={() => handleEditAd(null)} className="bg-black text-white p-2 rounded w-full">
-          Create New User
+          Create New Agent
         </button>
       </div>
       {/* Add/Edit Ad Form */}
@@ -80,7 +80,7 @@ const AgentManagementPage = () => {
           <form onSubmit={handleNewAdSubmit}>
             <div className="mb-4">
               <label htmlFor="newAdName" className="block text-sm font-medium text-gray-600">
-              User Name
+              Agent Name
               </label>
               <input
                 type="text"
@@ -93,7 +93,7 @@ const AgentManagementPage = () => {
             </div>
             <div className="mb-4">
               <label htmlFor="newAdDescription" className="block text-sm font-medium text-gray-600">
-              User Description
+              Agent Description
               </label>
               <textarea
                 id="newAdDescription"
@@ -104,7 +104,7 @@ const AgentManagementPage = () => {
               />
             </div>
             <button type="submit" className="bg-black text-white p-2 rounded w-full">
-              Create User
+              Create Agent
             </button>
           </form>
         </div>

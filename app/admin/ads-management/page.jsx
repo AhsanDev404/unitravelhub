@@ -2,17 +2,18 @@
 import React, { useState } from 'react';
 
 const initialAds = [
-  { id: 1, name: 'User 1', description: 'Description for User 1', status: 'Active' },
-  { id: 2, name: 'User', description: 'Description for User 2', status: 'Inactive' },
+  { id: 1, name: 'Ad 1', description: 'Description for Ad 1', status: 'Active' },
+  { id: 2, name: 'Ad 2', description: 'Description for Ad 2', status: 'Inactive' },
   // ...more initial ads
 ];
 
-const AgentManagementPage = () => {
+const AddManagementPage = () => {
   const [ads, setAds] = useState(initialAds);
   const [newAdName, setNewAdName] = useState('');
   const [newAdDescription, setNewAdDescription] = useState('');
 
   const handleStatusChange = (id) => {
+    // Logic to change the status of the ad with the given id (e.g., toggle between 'Active' and 'Inactive')
     setAds((prevAds) =>
       prevAds.map((ad) =>
         ad.id === id ? { ...ad, status: ad.status === 'Active' ? 'Inactive' : 'Active' } : ad
@@ -21,12 +22,13 @@ const AgentManagementPage = () => {
   };
 
   const handleEditAd = (id) => {
+    // Logic to edit the ad with the given id (redirect to edit page or show a modal, etc.)
     console.log(`Edit Ad with ID: ${id}`);
-    // Logic to edit the ad with the given ID (redirect to edit page or show a modal, etc.)
   };
 
   const handleNewAdSubmit = (e) => {
     e.preventDefault();
+    // Logic to add a new ad to the ads list
     const newAd = {
       id: ads.length + 1,
       name: newAdName,
@@ -34,12 +36,13 @@ const AgentManagementPage = () => {
       status: 'Active', // New ads are set to 'Active' by default
     };
     setAds([...ads, newAd]);
+    // Clear form fields
     setNewAdName('');
     setNewAdDescription('');
   };
 
   return (
-    <div className="min-h-screen flex flex-col items-center justify-center bg-gray-100">
+    <div className="min-h-screen  flex justify-center items-center  bg-gray-100">
       <div className="bg-white p-8 rounded shadow-md my-10 mb-8 w-full">
         <h2 className="text-2xl font-bold mb-4">Ads Management</h2>
         <table className="w-full mb-4">
@@ -70,7 +73,7 @@ const AgentManagementPage = () => {
           </tbody>
         </table>
         <button onClick={() => handleEditAd(null)} className="bg-black text-white p-2 rounded w-full">
-          Create New User
+          Create New Ad
         </button>
       </div>
       {/* Add/Edit Ad Form */}
@@ -80,7 +83,7 @@ const AgentManagementPage = () => {
           <form onSubmit={handleNewAdSubmit}>
             <div className="mb-4">
               <label htmlFor="newAdName" className="block text-sm font-medium text-gray-600">
-              User Name
+                Ad Name
               </label>
               <input
                 type="text"
@@ -93,7 +96,7 @@ const AgentManagementPage = () => {
             </div>
             <div className="mb-4">
               <label htmlFor="newAdDescription" className="block text-sm font-medium text-gray-600">
-              User Description
+                Ad Description
               </label>
               <textarea
                 id="newAdDescription"
@@ -104,7 +107,7 @@ const AgentManagementPage = () => {
               />
             </div>
             <button type="submit" className="bg-black text-white p-2 rounded w-full">
-              Create User
+              Create Ad
             </button>
           </form>
         </div>
@@ -113,4 +116,4 @@ const AgentManagementPage = () => {
   );
 };
 
-export default AgentManagementPage;
+export default AddManagementPage;
