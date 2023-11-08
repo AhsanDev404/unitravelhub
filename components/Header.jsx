@@ -30,32 +30,32 @@ const Header = () => {
           <Link href="/FAQ" className="hover:text-gray-300">
            FAQ
           </Link>
-          <Link href="/Contact" className="hover:text-gray-300">
+          <Link href="/contact" className="hover:text-gray-300">
            Contact Us
           </Link>
           {/* Add more navigation links as needed */}
         </nav>
 
         <div className="hidden lg:flex space-x-4">
-          <Link href={'/'} className="bg-white p-3 rounded-full flex justify-center items-center">
+          <Link href={'/search'} className="bg-white p-3 rounded-full flex justify-center items-center">
             <FaSearch className="" />
           </Link>
           <Link href={'/profile'} className="bg-white  border py-2 px-3 rounded-full flex justify-center items-center">
           <FaUser />
           </Link>
-          <Link href={'/au'} className="bg-white  border py-2 px-3 rounded-full flex justify-center items-center">
+          <Link href={'/auth'} className="bg-white  border py-2 px-3 rounded-full flex justify-center items-center">
             login
           </Link>
         </div>
 
         <div className="lg:hidden flex gap-2">
-        <Link href={'/'} className="bg-white p-3 rounded-full flex justify-center items-center">
+        <Link href={'/search'} className="bg-white p-3 rounded-full flex justify-center items-center">
             <FaSearch className="" />
           </Link>
-          <Link href={'/'} className="bg-white  border py-2 px-3 rounded-full flex justify-center items-center">
+          <Link href={'/profile'} className="bg-white  border py-2 px-3 rounded-full flex justify-center items-center">
           <FaUser />
           </Link>
-          <Link href={'/'} className="bg-white  border py-2 px-3 rounded-full flex justify-center items-center">
+          <Link href={'/auth'} className="bg-white  border py-2 px-3 rounded-full flex justify-center items-center">
             login
           </Link>
           <button
